@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void pattern(char *p, int* b, int m)
+int b[1<<15-1];
+
+void pattern(char *p, int m)
 {
   int i=0,j=-1;
   b[i]=j;
@@ -19,11 +21,10 @@ int find()
 
   if(scanf("%d\n",&m)==EOF) return 0;
   
-  int *b=new int[m+1];
-  char *p=new char[m];
+  char *p=(char*) malloc(m*sizeof(char));
 
   scanf("%s",p);
-  pattern(p,b,m);
+  pattern(p,m);
 
   int i=0,j=0;
   char c;
